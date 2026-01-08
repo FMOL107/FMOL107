@@ -1,0 +1,83 @@
+---
+title: TTY Interactiva (Shell Upgrade)
+---
+
+Cuando se obtiene acceso mediante una reverse shell, la sesión suele ser inestable:
+– No hay historial  
+– No funcionan combinaciones de teclas  
+– Un `Ctrl+C` puede matar la sesión  
+
+Antes de continuar con cualquier explotación, **hay que convertirla en una TTY interactiva real.**
+
+---
+
+## 1. Spawnear una pseudo-TTY
+
+En la reverse shell ejecuta:
+
+```bash
+script /dev/null -c bash
+```
+
+Esto crea una pseudo terminal y lanza una nueva Bash dentro de ella.
+
+---
+
+## 2. Pasar la shell a modo raw
+
+Suspende la shell con:
+
+```
+CTRL + Z
+```
+
+En tu terminal local ejecuta:
+
+```bash
+stty raw -echo; fg
+```
+
+Y vuelve a la shell.
+
+---
+
+## 3. Reinicializar la terminal
+
+Dentro de la sesión remota:
+
+```bash
+reset
+```
+
+Cuando pregunte por el tipo de terminal, escribe:
+
+```
+xterm
+```
+
+---
+
+## 4. Definir entorno correcto
+
+```bash
+export TERM=xterm
+export SHELL=bash
+```
+
+---
+
+## Resultado
+
+Ahora dispones de:
+
+- Autocompletado con TAB  
+- Historial de comandos  
+- Control de señales correcto  
+- Combinaciones de teclas funcionales  
+
+Tu reverse shell ya es una **TTY interactiva estable.**
+
+---
+
+### Referencia
+https://blu3ming.github.io/maquina-vulnversity-walkthrough/
