@@ -9,4 +9,4 @@ title: CutTheWire🦖
 
 **Subimos apuntes, reventamos máquinas y a veces las vulneramos.**  
 
-![rex](../static/img/rex.png)
+![rex](/img/rex.png)

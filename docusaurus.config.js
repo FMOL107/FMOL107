@@ -92,57 +92,56 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'cutTheWireSidebar',
             position: 'left',
-            label: 'Tutorial',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
+            label: 'Intro',
+          }//,
+          //{to: '/blog', label: 'Blog', position: 'left'},
         ],
       },
       footer: {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Start',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Intro',
+                to: '/docs/Start/intro',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'NetPen',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'DNS - 53',
+                to: '/docs/NET-Pen/Services/dns',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'KERBEROS - 88',
+                to: '/docs/NET-Pen/Services/kerberos',
               },
               {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
+                label: 'LDAP - 389,636,3268,3269',
+                to: '/docs/NET-Pen/Services/ldap',
               },
             ],
           },
           {
             title: 'More',
             items: [
+              //{
+              //  label: 'Blog',
+              //  to: '/blog',
+              //},
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'Toolbox',
+                to: '/docs/Toolbox/Enumeration-Tools',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'HTB',
+                href: 'https://app.hackthebox.com/users/536008',
               },
             ],
           },
