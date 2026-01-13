@@ -12,7 +12,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'Cut The Wire',
   tagline: 'Network pentest · Protocol hacking · Runbooks',
-  favicon: 'img/rex.png',
+  favicon: 'img/rex_cutting_the_wire.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -80,7 +80,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/rex_cutting_the_wire.png',
       colorMode: {
         respectPrefersColorScheme: true,
       },
@@ -88,7 +88,7 @@ const config = {
         title: 'Cut The Wire',
         logo: {
           alt: 'Rex Bitting The Wire',
-          src: 'img/rex.png',
+          src: 'img/rex_cutting_the_wire.png',
         },
         items: [
           {
@@ -147,7 +147,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `© ${new Date().getFullYear()} Cut The Wire · Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
