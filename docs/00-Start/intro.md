@@ -10,4 +10,4 @@ slug: /start/intro
 
 **Subimos apuntes, reventamos máquinas y a veces las vulneramos.**  
 
-![rex](/img/rex.png)
+![rex](/img/rex_cutting_the_wire.png)
