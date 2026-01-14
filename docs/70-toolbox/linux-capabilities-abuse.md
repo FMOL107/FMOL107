@@ -23,7 +23,6 @@ En lugar de otorgar privilegios completos mediante el bit SUID, Linux permite as
 - `cap_net_bind_service`
 - `cap_dac_override`
 - `cap_sys_admin`
-- etc.
 
 Cuando estas capacidades se asignan a binarios **interpretados** (Python, Perl, Ruby…) o mal controlados, pueden ser abusadas para obtener acceso como **root**.
 

