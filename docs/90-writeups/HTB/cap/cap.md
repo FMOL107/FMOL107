@@ -175,9 +175,9 @@ Una vez obtenido acceso como el usuario **nathan**, se procede a la enumeración
 
 Se realiza enumeración local del sistema utilizando **linPEAS**, transfiriendo el script a la máquina objetivo mediante un servidor HTTP siguiendo el procedimiento estándar documentado en: → [File Transfer – Python HTTP Server](/toolbox/file-transfer/python-http-server)
 
-Durante la ejecución de linPEAS se identifican varios hallazgos, destacando la presencia de **[Linux capabilities](/toolbox/linux-capabilities-abuse)** mal configuradas en binarios del sistema.
+Durante la ejecución de linPEAS se identifican varios hallazgos, destacando la presencia de ***linux capabilities*** mal configuradas en binarios del sistema.
 
-### 5.2 Linux Capabilities
+### 5.2 [Linux capabilities](/toolbox/linux-capabilities-abuse)
 
 El reporte muestra que el binario **`/usr/bin/python3.8`** tiene capacidades configuradas.
 
@@ -187,9 +187,6 @@ Se confirma manualmente con:
 
 ```bash
 getcap /usr/bin/python3.8
-```
-
-```bash
 /usr/bin/python3.8 = cap_setuid,cap_net_bind_service+eip
 ```
 
