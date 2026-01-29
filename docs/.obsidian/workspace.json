@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "30-post-exploitation/10-linux/pager-escape-less.md",
+                "file": "90-writeups/HTB/permx/permx.md",
                 "mode": "source",
                 "source": false
               }
@@ -60,7 +60,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "&gt",
+                "query": "tty",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -77,8 +77,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -98,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "30-post-exploitation/10-linux/pager-escape-less.md",
+                "file": "90-writeups/HTB/permx/permx.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "30-post-exploitation/10-linux/pager-escape-less.md",
+                "file": "90-writeups/HTB/permx/permx.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "30-post-exploitation/10-linux/pager-escape-less.md"
+                "file": "90-writeups/HTB/permx/permx.md"
               }
             }
           }
@@ -161,12 +160,16 @@
   },
   "active": "9f8598343b5ffab9",
   "lastOpenFiles": [
+    "30-post-exploitation/10-linux/tty-interactiva.md",
+    "90-writeups/HTB/permx/permx.md",
+    "90-writeups/HTB/permx/img/Pasted image 20260129223805.png",
+    "70-toolbox/reverse-shells.md",
+    "40-web-pen/90-shells/webshell_php.md",
+    "30-post-exploitation/10-linux/pager-escape-less.md",
     "40-web-pen/20-vulns/idor.md",
     "90-writeups/HTB/sau/sau.md",
-    "90-writeups/HTB/permx/permx.md",
     "40-web-pen/10-methodology/fuzzing.md",
     "40-web-pen/10-methodology/python-fuzzing.md",
-    "30-post-exploitation/10-linux/pager-escape-less.md",
     "40-web-pen/20-vulns/ssrf.md",
     "40-web-pen/20-vulns/ssrfgpt.md",
     "90-writeups/HTB/permx/img/web_chamilo.png",
@@ -175,14 +178,12 @@
     "40-web-pen/90-shells/img/cmd_phar_test.png",
     "40-web-pen/90-shells/img/php_ver.png",
     "90-writeups/HTB/permx",
-    "30-post-exploitation/10-linux/tty-interactiva.md",
     "90-writeups/HTB/cap/cap.md",
     "90-writeups/HTB/sau/img/systemctl_privesc.png",
     "90-writeups/HTB/sau/img/root_id.png",
     "90-writeups/HTB/sau/img/rce.png",
     "90-writeups/HTB/sau/img/revshell.png",
     "90-writeups/HTB/sau/img/sudo_systemctl_status.png",
-    "90-writeups/HTB/sau/img/maltrail_login.png",
     "70-toolbox/file-transfer/python-http-server.md",
     "90-writeups/HTB/sau/img",
     "70-toolbox/linux-capabilities-abuse.md",
@@ -200,7 +201,6 @@
     "90-writeups/HTB",
     "70-toolbox/wordlists.md",
     "70-toolbox/chrome-remote-debugger.md",
-    "70-toolbox/reverse-shells.md",
     "70-toolbox/bof.md",
     "00-start/intro.md"
   ]

