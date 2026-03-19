@@ -1,5 +1,6 @@
 ---
 title: Burp Fuzzing
+id: burp-fuzzing
 ---
 
 HTB: Hospital2

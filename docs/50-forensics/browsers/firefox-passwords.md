@@ -1,5 +1,6 @@
 ---
 title: Extraer contraseñas de un perfil de Firefox
+id: firefox-passwords
 ---
 
 https://github.com/unode/firefox_decrypt

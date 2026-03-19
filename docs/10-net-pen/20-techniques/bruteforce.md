@@ -1,5 +1,6 @@
 ---
 title: Bruteforce
+id: bruteforce
 ---
 
 ## Hashcat

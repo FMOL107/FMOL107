@@ -1,5 +1,6 @@
 ---
-title: Python Fuzzing 
+title: Python Fuzzing
+id: python-fuzzing
 ---
 
 ```python

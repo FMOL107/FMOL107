@@ -1,5 +1,6 @@
 ---
 title: Enumeration & PrivEsc Toolset
+id: enumeration-tools
 ---
 
 ## Linux

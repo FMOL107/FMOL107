@@ -1,5 +1,6 @@
 ---
 title: Linux Capabilities – Abuse
+id: linux-capabilities-abuse
 description: Abuso de Linux capabilities para escalada de privilegios
 tags:
   - linux

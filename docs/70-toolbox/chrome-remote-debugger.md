@@ -1,3 +1,8 @@
+---
+title: Chrome Remote Debugger
+id: chrome-remote-debugger
+---
+
 https://exploit-notes.hdks.org/exploit/linux/privilege-escalation/chrome-remote-debugger-pentesting/
 
 Chrome Remote Debugger is a tool that debugs web applications.

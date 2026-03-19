@@ -1,5 +1,6 @@
 ---
 title: File Transfer – Python HTTP Server
+id: python-http-server
 description: Transferencia de archivos a la máquina objetivo usando un servidor HTTP con Python
 tags:
   - linux

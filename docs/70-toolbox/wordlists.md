@@ -1,5 +1,6 @@
 ---
 title: Wordlists
+id: wordlists
 ---
 
 ## Wordlists principales

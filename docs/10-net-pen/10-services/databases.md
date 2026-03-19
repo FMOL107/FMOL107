@@ -1,4 +1,5 @@
 ---
+id: databases
 title: Databases
 ---
 
@@ -7,10 +8,10 @@ mysql -h ip.ip.ip.ip -p 3306 -u root
 ```
 
 
-#### MSSQL
+### MSSQL
 https://exploit-notes.hdks.org/exploit/database/mssql-pentesting/
 
-### [Enable/Disable a Windows Shell](https://exploit-notes.hdks.org/exploit/database/mssql-pentesting/#enable%2Fdisable-a-windows-shell)
+## [Enable/Disable a Windows Shell](https://exploit-notes.hdks.org/exploit/database/mssql-pentesting/#enable%2Fdisable-a-windows-shell)
 
 ```powershell
 > enable_xp_cmdshell
@@ -29,7 +30,7 @@ https://exploit-notes.hdks.org/exploit/database/mssql-pentesting/
 > RECONFIGURE;
 ```
 
-### [Commands](https://exploit-notes.hdks.org/exploit/database/mssql-pentesting/#commands-1)
+## [Commands](https://exploit-notes.hdks.org/exploit/database/mssql-pentesting/#commands-1)
 
 We can execute commands the same as Windows Command Prompt.
 

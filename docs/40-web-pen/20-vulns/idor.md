@@ -1,5 +1,6 @@
 ---
 title: IDOR – Detection & Exploitation
+id: idor
 description: Detección y explotación de Insecure Direct Object Reference (IDOR)
 ---
 

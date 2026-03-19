@@ -1,5 +1,6 @@
 ---
 title: ACL/ACE Abuse
+id: acl-ace-abuse
 ---
 
 - https://www.thehacker.recipes/ad/movement/dacl/
@@ -25,7 +26,7 @@ title: ACL/ACE Abuse
 
 ## Attack Paths
 
-##### quickly spot vulnerable elements 
+### quickly spot vulnerable elements
 
 ```bash
 certipy find -u 'user@domain.local' -p 'password' -dc-ip 'DC_IP' -vulnerable -stdout

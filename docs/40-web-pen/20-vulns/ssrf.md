@@ -1,5 +1,6 @@
 ---
 title: SSRF – Detección y explotación
+id: ssrf
 description: Cheatsheet corto para validar SSRF (OOB), pivotar a internos y aplicar bypasses comunes (allowlist/redirects).
 tags:
   - web

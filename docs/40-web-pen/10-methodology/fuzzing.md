@@ -1,8 +1,9 @@
 ---
 title: Fuzzing
+id: fuzzing
 ---
 
-### ffuf
+## ffuf
 
 ```bash
 ffuf -c -fc 404 -t 200 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u https://hospital.htb/FUZZ 
@@ -16,19 +17,19 @@ ffuf -c -fc 404 -t 200 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medi
 ffuf -c -fc 404 -t 200 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u 'http://internal.analysis.htb/users/list.php?FUZZ=test'
 ```
 
-### wfuzz
+## wfuzz
 
 ```bash
 wfuzz -c --hc 403,404 -t 200 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u https://hospital.htb/FUZZ
 ```
 
-### gobuster
+## gobuster
 
 ```bash
 gobuster dir -u http://hospital.htb:8080/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 20
 ```
 
-### Dirsearch
+## Dirsearch
 
 ```bash
 dirsearch -u http://cat.htb

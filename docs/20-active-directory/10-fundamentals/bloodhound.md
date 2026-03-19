@@ -1,8 +1,9 @@
 ---
 title: Bloodhound
+id: bloodhound
 ---
 
-### Installation
+## Installation
 
 ```bash
 sudo apt update -y && sudo apt install neo4j bloodhound
@@ -80,16 +81,16 @@ download C:\Users\svc-alfresco\desktop\bh\20240806091241_BloodHound.zip data.zip
 https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/bloodhound#sharphound
 
 
-#### Recolectores
+### Recolectores
 
-##### bloodhound-python
+#### bloodhound-python
 https://github.com/dirkjanm/BloodHound.py
 
 ```bash
 bloodhound-python -d certified.htb -u judith.mader -p judith09 --disable-autogc -ns 10.10.11.41
 ```
 
-##### netexec
+#### netexec
 ```bash
 nxc ldap certified.htb -u judith.mader -p judith09 --bloodhound --collection All --dns-server 10.10.11.41
 ```

@@ -1,5 +1,6 @@
 ---
 title: Extraer contraseñas del registro de Windows
+id: registry-passwords
 ---
 
 ```

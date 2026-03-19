@@ -1,5 +1,6 @@
 ---
 title: Reverse Shells
+id: reverse-shells
 ---
 
 Una reverse shell es una técnica mediante la cual la máquina comprometida inicia una conexión saliente hacia el atacante, proporcionando una consola interactiva.
